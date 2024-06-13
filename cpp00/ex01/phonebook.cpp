@@ -15,17 +15,37 @@ class PhoneBook
 {
 	public:
 	Contact contacts[8];
-	void addContact(std::string) {contacts[0].firstName = "John";};
 };
 
 
 int main()
 {
 	PhoneBook book;
+	std::string input;
 
-	book.contacts[0].firstName = "John";
-	
-	
-	
+	while (1)
+	{
+
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cout << "EOF detected\n";
+			break;
+		}
+		if (input == "ADD")
+		{
+			std::cout << "Adding contact\n";
+		}
+		if (input == "SEARCH")
+		{
+			std::cout << "Searching contact\n";
+		}
+		if (input == "EXIT")
+		{
+			std::cout << "Exiting\n";
+			break;
+		}
+		std::cin.clear();
+	}
 	return 0;
 }
