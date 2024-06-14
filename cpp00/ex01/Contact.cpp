@@ -30,8 +30,6 @@ std::string Contact::getSecret(void)
 	return secret;
 }
 
-
-
 bool Contact::setFirstName(void)
 {
 	std::string str;
