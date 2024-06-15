@@ -1,65 +1,48 @@
 #include "PhoneBook.hpp"
 
+std::string strTrunc(std::string str)
+{
+	if (str.size() > 10)
+	{
+		str.resize(9);
+		str += ".";
+	}
+	return str;
+}
 
-void	search(PhoneBook book)
+void PhoneBook::search() const
 {
 	int s = 0;
-	std::cout << "Searching contact\n";
-	std::cin >> s;
+	std::cout << "                CONTCAT LIST" << std::endl;
+	std::cout << "     index|first name| last name|  nickname" << std::endl;
+	for (int i = 0; i < 8; i++)
+	{
+		std::cout << std::setw(10) << i + 1 << "|"; 
+		std::cout << std::setw(10) << strTrunc(contacts[i].getFirstName()) << "|";
+		std::cout << std::setw(10) << strTrunc(contacts[i].getLastName()) << "|";
+		std::cout << std::setw(10) << strTrunc(contacts[i].getNickName()) << std::endl;
+	}
+	s -= 1;
 	if (s >= 0 && s <= 7)
 	{
-		book.getContacts(s).getFirstName();
-		book.getContacts(s).getLastName();
-		book.getContacts(s).getNickName();
-		book.getContacts(s).getPhoneNum();
-		book.getContacts(s).getSecret();
+		contacts[s].getFirstName();
+		contacts[s].getLastName();
+		contacts[s].getNickName();
+		contacts[s].getPhoneNum();
+		contacts[s].getSecret();
 	}
 }
 
-void	add(PhoneBook book)
+bool PhoneBook::add(int i)
 {
-	int i = 0;
 	std::cout << "Adding contact" << std::endl;
-	book.getContacts(i).setFirstName();
-	book.getContacts(i).setLastName();
-	book.getContacts(i).setNickName();
-	book.getContacts(i).setPhoneNum();
-	book.getContacts(i).setSecret();
-	std::cout << "Contact added" << std::endl;
+	contacts[i].setFirstName();
+	contacts[i].setLastName();
+	contacts[i].setNickName();
+	contacts[i].setPhoneNum();
+	contacts[i].setSecret();
+	std::cout << contacts[i].getFirstName() << " added to contact." << std::endl;
+	return true;
 }
 
 
-int main(void)
-{
-	PhoneBook book;
-	std::string input;
-	int i = 0;
-
-	while (1)
-	{
-		if (i > 7)
-			i = 0;
-		std::getline(std::cin, input);
-		if (std::cin.eof())
-		{
-			std::cout << "EOF detected" << std::endl;
-			break;
-		}
-		if (input == "ADD")
-		{
-			add(book);
-			i++;
-		}
-		if (input == "SEARCH")
-		{
-			search(book);
-		}
-		if (input == "EXIT")
-		{
-			std::cout << "Exiting\n";
-			break;
-		}
-		std::cin.clear();
-	}
-	return 0;
-}

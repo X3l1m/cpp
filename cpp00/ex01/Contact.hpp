@@ -15,27 +15,29 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
+#include <algorithm>
+#include <cctype>
 
 class Contact
 {
-	private:
+private:
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
 	std::string phoneNum;
 	std::string secret;
-
-	public:
-	bool setFirstName();
-	bool setLastName();
-	bool setNickName();
-	bool setPhoneNum();
-	bool setSecret();
-	std::string getFirstName();
-	std::string getLastName();
-	std::string getNickName();
-	std::string getPhoneNum();
-	std::string getSecret();
-};
+public:
+	void setFirstName();
+	void setLastName();
+	void setNickName();
+	void setPhoneNum();
+	void setSecret();
+	std::string getFirstName() const;
+	std::string getLastName() const;
+	std::string getNickName() const;
+	std::string getPhoneNum() const;
+	std::string getSecret() const;
+};;
 
 #endif

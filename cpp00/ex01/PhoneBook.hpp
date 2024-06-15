@@ -9,9 +9,8 @@ class PhoneBook
 	Contact contacts[8];
 
 	public:
-	Contact& getContacts(int i){
-		return contacts[i];
-	}
+	void search() const;
+	bool add(int i);
 };
 
 #endif
