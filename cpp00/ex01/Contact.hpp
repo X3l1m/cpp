@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <algorithm>
+// #include <algorithm> // alpha check
 #include <cctype>
 
 class Contact
@@ -27,6 +27,7 @@ private:
 	std::string nickName;
 	std::string phoneNum;
 	std::string secret;
+
 public:
 	void setFirstName();
 	void setLastName();
@@ -38,6 +39,6 @@ public:
 	std::string getNickName() const;
 	std::string getPhoneNum() const;
 	std::string getSecret() const;
-};;
+};
 
 #endif

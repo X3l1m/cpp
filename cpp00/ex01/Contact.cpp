@@ -26,6 +26,7 @@ std::string Contact::getSecret(void) const
 }
 
 std::string getInput();
+
 bool isAllNum(std::string str);
 bool isAllAlpha(std::string str);
 
@@ -57,6 +58,7 @@ void Contact::setNickName(void)
 {
 	std::cout << "Enter nickname: ";
 	nickName = getInput();
+}
 
 void Contact::setPhoneNum(void)
 {

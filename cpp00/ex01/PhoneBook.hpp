@@ -10,7 +10,7 @@ class PhoneBook
 
 	public:
 	void search() const;
-	bool add(int i);
+	bool add(int i);//isim degistir
 };
 
 #endif
