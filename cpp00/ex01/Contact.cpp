@@ -25,57 +25,52 @@ std::string Contact::getSecret(void) const
 	return secret;
 }
 
-std::string getInput();
-
-bool isAllNum(std::string str);
-bool isAllAlpha(std::string str);
-
 void Contact::setFirstName(void)
 {
 	bool isAlpha = false;
-	std::cout << "Enter first name: ";
+	std::cout << C_CYN << "Enter first name: " << C_RST;
 	do {
 		firstName = getInput();
 		isAlpha = isAllAlpha(firstName);
 		if (!isAlpha)
-			std::cout << "A first name can only contain letters!" << std::endl << ": ";
+			std::cout << C_RED << "A first name can only contain letters!" << C_RST << std::endl << ": ";
 	} while (!isAlpha);
 }
 
 void Contact::setLastName(void)
 {
 	bool isAlpha = false;
-	std::cout << "Enter last name: ";
+	std::cout << C_CYN << "Enter last name: " << C_RST;
 	do {
 		lastName = getInput();
 		isAlpha = isAllAlpha(lastName);
 		if (!isAlpha)
-			std::cout << "A last name can only contain letters!" << std::endl << ": ";
+			std::cout << C_RED << "A last name can only contain letters!" << C_RST << std::endl << ": ";
 	} while (!isAlpha);
 }
 
 void Contact::setNickName(void)
 {
-	std::cout << "Enter nickname: ";
+	std::cout << C_CYN << "Enter nickname: " << C_RST;
 	nickName = getInput();
 }
 
 void Contact::setPhoneNum(void)
 {
 	bool isNum = false;
-	std::cout << "Enter phone number: ";
+	std::cout << C_CYN << "Enter phone number: " << C_RST;
 	do {
 		phoneNum = getInput();
-		if (phoneNum.size() > 15)
-			std::cout << "A phone number can be a maximum of 15 characters!" << std::endl << ": ";
 		isNum = isAllNum(phoneNum);
 		if (!isNum)
-			std::cout << "A phone number can only contain numbers!" << std::endl << ": ";
+			std::cout << C_RED << "A phone number can only contain numbers!" << C_RST << std::endl << ": ";
+		else if (phoneNum.size() > 15)
+			std::cout << C_RED << "A phone number can be a maximum of 15 characters!" << C_RST << std::endl << ": ";
 	} while (phoneNum.size() > 15 || !isNum);
 }
 
 void Contact::setSecret(void)
 {
-	std::cout << "Enter darkest secret: ";
+	std::cout << C_CYN << "Enter darkest secret: " << C_RST;
 	secret = getInput();
 }

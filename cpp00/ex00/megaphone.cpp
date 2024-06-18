@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cctype>
 
 int main(int argc, char const *argv[])
 {
@@ -7,8 +8,11 @@ int main(int argc, char const *argv[])
 	else
 	{
 		for (int a = 1; argv[a]; a++)
-			for (int b = 0; argv[a][b]; b++)
-				std::cout << (char)toupper(argv[a][b]);
+		{
+			std::string str = argv[a];
+			for (char& c : str)
+				std::cout << (char)std::toupper(c);
+		}
 	}
 	std::cout << std::endl;
 	return 0;

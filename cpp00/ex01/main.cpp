@@ -6,24 +6,34 @@ std::string getInput()
 	do {
 		if (!std::getline(std::cin, input))
 		{
+			if (std::cin.eof())
+				std::cout << C_YEL << "\nEOF" << C_RST;
 			std::cout << std::endl;
 			exit(1);
 		}
 		if (input.empty())
-			std::cout << "It can not be empty" << std::endl << ": ";
+			std::cout << C_RED << "Write something..." << C_RST << std::endl << ": ";
 	} while (input.empty());
 	return input;
 }
 
 bool isAllNum(std::string str)
 {
-	(void)str;
+	for (char c : str)
+	{
+		if (!std::isdigit(c))
+			return false;
+	}
 	return true;
 }
 
 bool isAllAlpha(std::string str)
 {
-	(void)str;
+	for (char c : str)
+	{
+		if (!std::isalpha(c))
+			return false;
+	}
 	return true;
 }
 
@@ -33,19 +43,15 @@ int main(void)
 	std::string	input;
 	int			i = 0;
 
-	while (1)
+	while (true)
 	{
-		std::cout << "Enter ADD, SEARCH or EXIT: ";
+		std::cout << C_BLU << "Enter ADD, SEARCH or EXIT: " << C_RST;
 		if (i > 7)
 			i = 0;
-		if (!std::getline(std::cin, input))
+		input = getInput();
+		if (input == "ADD")
 		{
-			std::cout << std::endl;
-			exit(1);
-		}
-		else if (input == "ADD")
-		{
-			if (!book.add(i++))
+			if (!book.initContact(i++))
 				break;
 		}
 		else if (input == "SEARCH")
@@ -54,16 +60,11 @@ int main(void)
 		}
 		else if (input == "EXIT")
 		{
-			std::cout << "Exiting" << std::endl;
+			std::cout << C_YEL << "Exiting" << C_RST << std::endl;
 			break;
 		}
 		else if (!input.empty())
-			std::cout << "Invalid command" << std::endl;
+			std::cout << C_RED << "Invalid command" << C_RST << std::endl;
 	}
 	return 0;
 }
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-//alpha num check
-//index check
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

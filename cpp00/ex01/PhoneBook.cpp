@@ -10,12 +10,25 @@ std::string strTrunc(std::string str)
 	return str;
 }
 
+int indexCheck(std::string index)
+{
+	if (index.size() == 1 && std::isdigit(index[0]))
+	{
+		int in = index[0] - '0';
+		if (in > 0 && in < 9)
+			return in;
+	}
+	std::cout << C_RED << "Write a number between 1 and 8." << C_RST << std::endl << ": ";
+	return 0;
+}
+
 void PhoneBook::search() const
 {
-	int s = 0;
+	int in = 0;
+	std::string index;
 
-	std::cout << "                CONTCAT LIST" << std::endl;
-	std::cout << "     index|first name| last name|  nickname" << std::endl;
+	std::cout << C_CYN << "                CONTCAT LIST" << std::endl;
+	std::cout << "     Index|First Name| Last Name|  Nickname" << C_MAG << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
 		std::cout << std::setw(10) << i + 1 << "|"; 
@@ -23,36 +36,26 @@ void PhoneBook::search() const
 		std::cout << std::setw(10) << strTrunc(contacts[i].getLastName()) << "|";
 		std::cout << std::setw(10) << strTrunc(contacts[i].getNickName()) << std::endl;
 	}
-	std::cout << "Enter index: ";
+	std::cout << C_CYN << "Enter index: " << C_RST;
 	do {
-		std::cin >> s;
-		std::cout << std::endl;
-		if (std::cin.eof())
-			exit(1);
-		if (std::cin.fail())
-		{
-			std::cin.clear();
-			std::cin.ignore(1000, '\n');
-			std::cout << "Please enter a number: ";
-		}
-		if (s < 1 || s > 8)
-			std::cout << "Please enter a number between 1 and 8: ";
-	} while (s < 1 || s > 8);
-	std::cout << "First Name:	" << contacts[s].getFirstName() << std::endl;
-	std::cout << "Last Name:	" << contacts[s].getLastName() << std::endl;
-	std::cout << "Nickname:	" << contacts[s].getNickName() << std::endl;
-	std::cout << "Phone Number:	" << contacts[s].getPhoneNum() << std::endl;
-	std::cout << "Secret:		" << contacts[s].getSecret() << std::endl;
+		index = getInput();
+	} while (!(in = indexCheck(index)));
+	in--;
+	std::cout << C_MAG << "First Name:	" << C_RST << contacts[in].getFirstName() << std::endl;
+	std::cout << C_MAG << "Last Name:	" << C_RST << contacts[in].getLastName() << std::endl;
+	std::cout << C_MAG << "Nickname:	" << C_RST << contacts[in].getNickName() << std::endl;
+	std::cout << C_MAG << "Phone Number:	" << C_RST << contacts[in].getPhoneNum() << std::endl;
+	std::cout << C_MAG << "Secret:		" << C_RST << contacts[in].getSecret() << std::endl;
 }
 
-bool PhoneBook::add(int i)
+bool PhoneBook::initContact(int i)
 {
-	std::cout << "Adding contact" << std::endl;
+	std::cout << C_GRN << "Adding contact" << C_RST << std::endl;
 	contacts[i].setFirstName();
 	contacts[i].setLastName();
 	contacts[i].setNickName();
 	contacts[i].setPhoneNum();
 	contacts[i].setSecret();
-	std::cout << contacts[i].getFirstName() << " added to contact." << std::endl;
+	std::cout << C_GRN << contacts[i].getFirstName() << " added to contact." << C_RST << std::endl;
 	return true;
 }
