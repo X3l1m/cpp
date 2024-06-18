@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Contact.cpp                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/06/18 15:29:00 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/18 15:29:00 by seyildir      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 std::string Contact::getFirstName(void) const

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: seyildir <seyildir@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2024/06/18 15:29:16 by seyildir      #+#    #+#                  #
+#    Updated: 2024/06/18 15:29:16 by seyildir      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = PhoneBook
 
 CC = c++
@@ -8,12 +20,12 @@ OBJ_DIR = obj
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -o $(NAME) $^
 
-$(OBJ_DIR)/%.o: %.cpp | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
 $(OBJ_DIR):
