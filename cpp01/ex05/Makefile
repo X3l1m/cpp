@@ -5,12 +5,12 @@
 #                                                      +:+                     #
 #    By: seyildir <seyildir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/06/19 16:27:45 by seyildir      #+#    #+#                  #
-#    Updated: 2024/06/19 16:27:45 by seyildir      ########   odam.nl          #
+#    Created: 2024/06/19 18:52:00 by seyildir      #+#    #+#                  #
+#    Updated: 2024/06/19 18:52:00 by seyildir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = losers
+NAME = harl
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror
@@ -34,6 +34,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f *.replace
 
 re: fclean all

@@ -1,5 +1,3 @@
-ilk satir
-ikinci satir
-deneme
-Hello World!
-extra
+adghellohellohelloasdf
+deneme hello dosyasi
+bir deneme dosysi hello
