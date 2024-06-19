@@ -31,6 +31,7 @@ int main(int argc, char **argv)
 		std::cerr << "Usage: <filename> <word> <replace word>" << std::endl;
 		return 1;
 	}
+
 	std::ifstream oFile(argv[1]);
 	if (!oFile.is_open())
 	{
@@ -39,10 +40,17 @@ int main(int argc, char **argv)
 	}
 
 	std::ofstream rFile(argv[1] + std::string(".replace"));
+	if (!rFile.is_open())
+	{
+		std::cerr << "Error: " << argv[1] << ".replace couldn't open." << std::endl;
+		return 3;
+	}
+
 	std::string s1 = argv[2];
 	std::string s2 = argv[3];
 	std::string oldLine;
 	size_t      com;
+
 	while (std::getline(oFile, oldLine))
 	{
 		size_t pos = 0;
@@ -59,6 +67,7 @@ int main(int argc, char **argv)
 		if (!oFile.eof())
 			rFile << '\n';
 	}
-
+	oFile.close();
+	rFile.close();
 	return 0;
 }
