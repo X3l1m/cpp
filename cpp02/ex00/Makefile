@@ -1,7 +1,7 @@
 NAME = fixed
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror
+# FLAGS = -Wall -Wextra -Werror
 OBJ_DIR = obj/
 SRCS = $(wildcard *.cpp)
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
