@@ -15,12 +15,33 @@ Fixed::Fixed(const int value) : _value(value << _fractionalBits)
 	std::cout << "Int Constructor called" << std::endl;
 }
 
+Fixed::Fixed(const float value) : _value(roundf(value * (1 << _fractionalBits)))
+{
+	std::cout << "Float Constructor called" << std::endl;
+}
+
+float Fixed::toFloat() const
+{
+	return static_cast<float>(_value) / (1 << _fractionalBits);
+}
+
+int Fixed::toInt() const
+{
+	return _value >> _fractionalBits;
+}
+
 Fixed &Fixed::operator=(const Fixed &assign)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &assign)
 		_value = assign.getRawBits();
 	return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, Fixed const &i)
+{
+	os << i.toFloat();
+	return os;
 }
 
 Fixed::~Fixed()
