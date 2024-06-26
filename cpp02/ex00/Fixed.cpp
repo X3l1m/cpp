@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Fixed.cpp                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2024/06/26 16:46:43 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/26 16:46:43 by seyildir      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+Fixed::Fixed() : _value(0)
 {
 	std::cout << "Default Constructor called" << std::endl;
-	_value = 0;
 }
 
 Fixed::Fixed(const Fixed &copy)
