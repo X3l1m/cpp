@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Serializer.cpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/04/15 16:31:18 by seyildir      #+#    #+#                 */
+/*   Updated: 2025/04/15 16:31:18 by seyildir      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Serializer.hpp"
 
 // Private constructor implementation
