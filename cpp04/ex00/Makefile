@@ -13,7 +13,7 @@
 NAME = animal
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++11
 OBJ_DIR = obj/
 SRCS = $(wildcard *.cpp)
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))

@@ -41,7 +41,9 @@ Brain& Brain::operator=(const Brain& copy)
 
 std::string Brain::getIdea(int index) const
 {
-	return ideas[index];
+	if (index >= 0 && index < 100)
+		return ideas[index];
+	return nullptr;
 }
 
 void Brain::setIdea(int index, std::string idea)
