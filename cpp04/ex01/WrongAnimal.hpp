@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   WrongAnimal.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/28 18:49:54 by seyildir      #+#    #+#                 */
-/*   Updated: 2024/06/28 18:49:54 by seyildir      ########   odam.nl         */
+/*   Created: 2024/06/29 18:35:54 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/29 18:35:54 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class ClapTrap
+class WrongAnimal
 {
-	private:
-		std::string _name;
-		unsigned int _hitPoints;
-		unsigned int _energyPoints;
-		unsigned int _attackDamage;
+	protected:
+		std::string type;
 
 	public:
-		ClapTrap();
-		~ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &copy);
-		ClapTrap &operator=(const ClapTrap &assign);
+		WrongAnimal();
+		~WrongAnimal();
+		WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal& copy);
+		WrongAnimal& operator=(const WrongAnimal& copy);
 //member functions
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		std::string getType() const;
+		void makeSound() const;
 };
 
 #endif

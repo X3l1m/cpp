@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/28 18:49:47 by seyildir      #+#    #+#                 */
-/*   Updated: 2024/06/28 18:49:47 by seyildir      ########   odam.nl         */
+/*   Created: 2024/06/28 18:50:03 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/28 18:50:03 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void ClapTrap::attack(const std::string& target)
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
 	}
 }
-
 
 void ClapTrap::takeDamage(unsigned int amount)
 {

@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   Dog.hpp                                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/28 18:49:54 by seyildir      #+#    #+#                 */
-/*   Updated: 2024/06/28 18:49:54 by seyildir      ########   odam.nl         */
+/*   Created: 2024/06/29 18:35:47 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/29 18:35:47 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class ClapTrap
+class Dog : public Animal
 {
 	private:
-		std::string _name;
-		unsigned int _hitPoints;
-		unsigned int _energyPoints;
-		unsigned int _attackDamage;
+		Brain* brain;
 
 	public:
-		ClapTrap();
-		~ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &copy);
-		ClapTrap &operator=(const ClapTrap &assign);
+		Dog();
+		~Dog();
+		Dog(const Dog& copy);
+		Dog& operator=(const Dog& copy);
 //member functions
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void makeSound() const;
+		Brain* getBrain() const;
 };
 
 #endif

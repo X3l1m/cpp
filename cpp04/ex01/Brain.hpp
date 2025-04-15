@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ClapTrap.hpp                                       :+:    :+:            */
+/*   Brain.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/28 18:49:54 by seyildir      #+#    #+#                 */
-/*   Updated: 2024/06/28 18:49:54 by seyildir      ########   odam.nl         */
+/*   Created: 2024/06/29 18:35:37 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/29 18:35:37 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
 
-class ClapTrap
+class Brain
 {
 	private:
-		std::string _name;
-		unsigned int _hitPoints;
-		unsigned int _energyPoints;
-		unsigned int _attackDamage;
+		std::string ideas[100];
 
 	public:
-		ClapTrap();
-		~ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &copy);
-		ClapTrap &operator=(const ClapTrap &assign);
+		Brain();
+		~Brain();
+		Brain(const Brain& copy);
+		Brain& operator=(const Brain& copy);
 //member functions
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		std::string getIdea(int index) const;
+		void setIdea(int index, std::string idea);
 };
 
 #endif

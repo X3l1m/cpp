@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: seyildir <seyildir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/06/28 18:49:57 by seyildir      #+#    #+#                  #
-#    Updated: 2024/06/28 18:49:57 by seyildir      ########   odam.nl          #
+#    Created: 2025/04/07 15:12:26 by seyildir      #+#    #+#                  #
+#    Updated: 2025/04/07 15:12:26 by seyildir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = executable
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++20
 OBJ_DIR = obj/
 SRCS = $(wildcard *.cpp)
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))
