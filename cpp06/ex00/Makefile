@@ -5,15 +5,15 @@
 #                                                      +:+                     #
 #    By: seyildir <seyildir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2025/04/11 22:41:05 by seyildir      #+#    #+#                  #
-#    Updated: 2025/04/11 22:41:07 by seyildir      ########   odam.nl          #
+#    Created: 2025/04/07 15:15:39 by seyildir      #+#    #+#                  #
+#    Updated: 2025/04/07 15:15:39 by seyildir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = exec
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++20
 OBJ_DIR = obj/
 SRCS = $(wildcard *.cpp)
 OBJS = $(addprefix $(OBJ_DIR), $(SRCS:.cpp=.o))

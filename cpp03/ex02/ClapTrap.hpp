@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/06/28 18:49:54 by seyildir      #+#    #+#                 */
-/*   Updated: 2024/06/28 18:49:54 by seyildir      ########   odam.nl         */
+/*   Created: 2024/06/28 18:50:17 by seyildir      #+#    #+#                 */
+/*   Updated: 2024/06/28 18:50:17 by seyildir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		unsigned int _hitPoints;
 		unsigned int _energyPoints;

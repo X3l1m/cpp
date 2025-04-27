@@ -53,3 +53,5 @@ void	Cat::makeSound() const
 {
 	putMessage(L_BLUE, "I say Miyav not Meow!", 1);
 }
+
+a = b;

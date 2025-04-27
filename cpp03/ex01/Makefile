@@ -5,12 +5,12 @@
 #                                                      +:+                     #
 #    By: seyildir <seyildir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
-#    Created: 2024/06/28 18:49:57 by seyildir      #+#    #+#                  #
-#    Updated: 2024/06/28 18:49:57 by seyildir      ########   odam.nl          #
+#    Created: 2024/06/28 18:50:10 by seyildir      #+#    #+#                  #
+#    Updated: 2024/06/28 18:50:10 by seyildir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = claptrap
+NAME = scavtrap
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98

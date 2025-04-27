@@ -57,12 +57,7 @@
 		"typeinfo": "cpp",
 		"optional": "cpp",
 		"ranges": "cpp",
-		"span": "cpp"
-	},
-	"github.copilot.enable": {
-		"*": true,
-		"plaintext": false,
-		"markdown": false,
-		"scminput": false
+		"span": "cpp",
+		"cstring": "cpp"
 	}
 }
