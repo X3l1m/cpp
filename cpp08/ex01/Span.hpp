@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Span.hpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: seyildir <seyildir@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/05/02 16:48:31 by seyildir      #+#    #+#                 */
+/*   Updated: 2025/05/02 16:48:31 by seyildir      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <exception>
+#include <limits.h>
 
 class Span
 {
